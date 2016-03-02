@@ -1,0 +1,124 @@
+*	{
+	margin: 0;
+	padding: 0;
+}
+
+.main_content   {
+    min-height: 90%;
+    
+}
+#settings_menu  {
+    width: 90%;;
+    min-height: inherit;
+    background-color: whitesmoke;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+    float: left;
+    margin: 5px;
+    padding: 15px;
+}
+
+#settings_menu h3   {
+    padding-bottom: 5px;
+}
+
+#settings_menu ul  {
+    list-style-type: none;
+    vertical-align: middle;
+}
+#settings_menu ul li    {
+    display: block;
+    margin-left: 10px;
+    line-height: 40px;
+    font-size: 16px;    
+    padding: 5px;
+}
+#settings_menu ul li a  {
+    line-height: 35px;
+    color: inherit;
+    font-size: 16px;
+    text-decoration: underline;
+}
+#settings_menu ul li a:hover  {
+    color: darkslateblue;
+} 
+
+#general_tab, #general_content   {
+    display: inline-block;
+}
+#general_content    {
+    width: 50%;
+}
+#editMail, #editUser, #editPassword   {
+    display: none;
+    vertical-align: middle;
+}
+input   {
+    height: 30px;
+}
+input[placeholder]   {
+    line-height: 18px;
+}
+#themeContent span  {
+    display: inline-block;
+    vertical-align: text-top;
+}
+#general_tab    {
+    width: 90%;
+}
+.tab    {
+    margin-bottom: 3px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+.tabhead    {
+    min-width: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#c_ff3155    {
+    display: inline-block;
+    width: 50px;
+      height: 50px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      background: #ff3155;
+}
+#c_f99e29    {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #F99E29;
+}
+#c_93c73f    {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #93C73F;
+}
+#c_24bbaa    {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #24BBAA;
+}
+#c_2b9ffa    {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #2B9FFA;
+}
