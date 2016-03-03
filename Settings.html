@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Settings - Sensa</title>
+        <link rel="stylesheet" type="text/css"  href="css/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="css/settings.css"/>
+        <script src="jquery-1.12.0.js"></script>
+        <script src="js/main.js"></script>
+		<script src="js/settings.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
+    </head>
+    
+    
+    <body>
+        <header class="headerMenu">
+          <nav class="navbar">
+                <ul>
+                  <li id="imageElement"><img src="assets/logo.png" alt="Logo"/></li> 
+                  
+                    <li id="searchElement">  
+                    <div id="wrap">
+                        <form action="#" >
+                            <input id="search" name="search" type="search" placeholder="Search me!">
+                            <button type="submit" id="search_submit"></button>
+                        
+                        </form>
+                    </div>
+                 
+                <li id="notifElement">
+                    <a href="#"><img id="notif" src="assets/notification.png" alt="notification"></a>
+                </li>
+                    
+                <li id="profElement">
+                    <img id="prof" src="assets/Pic.jpg" alt="Profile Picture">
+                </li>              
+             </ul>
+           </nav>
+            
+        </header>
+        <div id="lightbox"></div>
+        <div id="notif_submenu">
+            <div><button type="button">Mark as read</button></div>
+            <div id="notifs">
+                <p>
+                    Notification 1
+                </p>
+                <p>
+                    Notification 2
+                </p>
+                <p>
+                    Notification 3
+                </p>
+            </div>                
+        </div>
+        <div id="prof_submenu" >
+            <div id="items">
+                <p>
+                    <a href="askQ.html">Ask Sensa</a>
+                </p>
+                <p>
+                    <a href="profile.html">Your Profile</a>
+                </p>
+                <p>
+                    <a href="aboutUs.html">About Us</a>
+                </p>
+                <p>
+                    <a href="Settings.html">Settings</a>
+                </p>
+                <p>
+                    <a href="activity_feed.html">Your Activity</a>
+                </p>
+                <p>
+                    <a href="logIn.html">Log out</a>
+                </p>
+            </div>                
+        </div>
+		<section class="main_content">
+			<div id="settings_menu">
+                <h3>Settings</h3>
+                <ul>
+                    <li>GENERAL<br>
+                        <div id="general_tab">
+                            <div class="tab">
+                                <span class="tabhead">Primary Email ID</span>
+                                <span id="eContent"><span id="dynamic_email">manojparihar09@gmail.com</span><img src="assets/edit.png" alt="Edit"></span>
+                                <span id="editMail">
+                                    <input type="email" size="30"  name="eID">
+                                </span>
+                            </div>
+                            <div class="tab">
+                                <span class="tabhead">Username</span>
+                                <span id="userContent"><span id="dynamic_user">manojparihar09</span><img src="assets/edit.png" alt="Edit"></span>
+                                <span id="editUser">
+                                    <input type="text" size="30"  name="eU">
+                                </span>
+                            </div>
+                            <div class="tab">
+                                <span class="tabhead">Password</span>
+                                <span id="passwordContent">Change your password<img src="assets/edit.png" alt="Edit"></span>
+                                <div id="editPassword">
+                                    <input type="password" size="30" placeholder="Enter password" name="eP">
+                                    <br>
+                                    <input type="password" size="30" placeholder="Confirm password"  name="eP2">
+                                </div>
+                            </div>
+                            <div class="tab">
+                                <span class="tabhead">Theme</span>
+                                <span id="themeContent">
+                                    <span id="c_ff3155"></span>
+                                    <span id="c_f99e29"></span>
+                                    <span id="c_93c73f"></span>
+                                    <span id="c_24bbaa"></span>
+                                    <span id="c_2b9ffa"></span>
+                            </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>ACCOUNT 
+                        <ul>
+                            <li>Deactivate my Account</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="settings">
+                
+            </div>
+        </section>    
+        <footer>
+            <div>
+                <p>&copy; 2016 Sensa</p>
+            </div>     
+        </footer>     
+    </body>
+</html>

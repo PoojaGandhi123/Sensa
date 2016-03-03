@@ -1,33 +1,29 @@
 <?php include("./inc/header.inc.php"); ?>
 <?php  
-
 if (isset($_GET['u'])) {
-	$username = mysqli_real_escape_string($con,$_GET['u']);
-	//if (ctype_alnum($username)) {
+	$username = mysql_real_escape_string($_GET['u']);
+	if (ctype_alnum($username)) {
  	//check user exists
-	$query = "SELECT email, firstName FROM user WHERE email='$username'";
-	$check=mysqli_query($con,$query);
-    if (mysqli_num_rows($check)===1) {
-	$get = mysqli_fetch_assoc($check);
-	
-	$firstname = $get['firstName'];	
+	$check = mysql_query("SELECT username, first_name FROM users WHERE username='$username'");
+	if (mysql_num_rows($check)===1) {
+	$get = mysql_fetch_assoc($check);
+	$username = $get['username'];
+	$firstname = $get['first_name'];	
 	}
 	else
 	{
-	echo "User doesn't exist";	
-    echo "<meta http-equiv=\"refresh\" content=\"0; url=http://localhost/Web%20Project/logIn.php\">";
+	echo "<meta http-equiv=\"refresh\" content=\"0; url=http://localhost/tutorials/findFriends/index.php\">";	
 	exit();
 	}
- 
-}
+	}
+
 ?>		
  
 
-
 <section class="main_content">
 			<div id="cards">
-				<p class="card">  Profile page for: <?php echo  $firstname;?></p>
-			   
+				<p class="card"></p>
+			
 				<p class="card"></p>
                 
                 <p class="card"></p>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ask Question or Survey</title>
+        <link rel="stylesheet" type="text/css"  href="css/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="css/askQ.css"/>
+        <script src="jquery-1.12.0.js"></script>
+        <script src="js/main.js"></script>
+		<script src="js/askQ.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
+        
+    </head>
+    
+    <body>
+        <header class="headerMenu">
+          <nav class="navbar">
+                <ul>
+                  <li id="imageElement"><a href="index.html"> <img src="assets/logo.png" alt="Logo"/></a></li> 
+                  
+                    <li id="searchElement">  
+                    <div id="wrap">
+                        <form action="#" >
+                            <input id="search" name="search" type="search" placeholder="Search me!">
+                            <button type="submit" id="search_submit"></button>
+                        
+                        </form>
+                    </div>
+                 
+                <li id="notifElement">
+                    <a href="#"><img id="notif" src="assets/notification.png" alt="notification"></a>
+                </li>
+                    
+                <li id="profElement">
+                    <img id="prof" src="assets/Pic.jpg" alt="Profile Picture">
+                </li>              
+             </ul>
+           </nav>
+            
+        </header>
+        <div id="lightbox"></div>
+        <div id="notif_submenu">
+            <div><button type="button">Mark as read</button></div>
+            <div id="notifs">
+                <p>
+                    Notification 1
+                </p>
+                <p>
+                    Notification 2
+                </p>
+                <p>
+                    Notification 3
+                </p>
+            </div>                
+        </div>
+        <div id="prof_submenu" >
+            <div id="items">
+                <p>
+                    <a href="askQ.html">Ask Sensa</a>
+                </p>
+                <p>
+                    <a href="profile.html">Your Profile</a>
+                </p>
+                <p>
+                    <a href="aboutUs.html">About Us</a>
+                </p>
+                <p>
+                    <a href="Settings.html">Settings</a>
+                </p>
+                <p>
+                    <a href="activity_feed.html">Your Activity</a>
+                </p>
+                <p>
+                    <a href="logIn.html">Log out</a>
+                </p>
+            </div>                
+        </div>
+        <section class="main_content">
+        <div id="cards">
+            <div id="options">
+                <button type="button" name="question" value="question" autofocus>Ask a Question</button>
+                <button type="button" name="survey" value="survey">Start a Survey</button>
+            </div>
+            <div id="question">
+                <form>
+                    <h3>Question</h3>
+                    <div class="divBox" contenteditable="true">
+                    </div>
+                    <br>
+                    <h3>A short description</h3>
+                    <div id="titleDesc" class="divBox" contenteditable="true">
+                    </div>
+                    <br>
+                    <h3>Relevant Tags</h3>
+                    <div class="divBox" contenteditable="true">
+                    </div>
+                    <br>
+                    <input type="submit" name="subQ" value="Post Question">
+                </form>
+            </div>
+            <div id="survey">
+                <br>
+                <form>
+                    <h3>What would you like to survey about?</h3>
+                    <div class="divBox" contenteditable="true">
+                    </div>
+                    <br>
+                    <h3>Relevant tags</h3>
+                    <div class="divBox" contenteditable="true">
+                    </div>
+                    <br>
+                    <h3 style="margin-left: 30%;">Set Time Frame</h3>
+                    <br>
+                    <div class="divBox" style="border:none; text-align: center">
+                        <input type="text" name="time" >
+                        <select>
+                            <option value="days">Day(s) </option>
+                            <option value="month">Month(s)</option>
+                            <option value="indef">Timeless</option>
+                        </select>
+                    </div>
+                    <br>
+                    <input type="submit" name="subS" value="Take a Survey!">
+                </form>
+            </div>
+        </div>    
+            <aside>
+				<p>The formal term 'document' is defined in Library and information science and in documentation science, as a basic theoretical construct. It is everything which may be preserved or represented in order to serve as evidence for some purpose. The classical example provided by Suzanne Briet is an antelope: "An antelope running wild on the plains of Africa should not be considered a document, she rules.
+				</p>
+			</aside>
+        </section>
+        <footer>
+            <div>
+                <p>&copy; 2016 Sensa</p>
+            </div>     
+        </footer>    
+    </body>
+</html>

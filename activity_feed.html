@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Activity Feed</title>
+        <link rel="stylesheet" type="text/css"  href="css/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="css/profile.css"/>
+        <script src="jquery-1.12.0.js"></script>
+		<script src="js/main.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
+    </head>
+    
+    
+    <body>
+        <header class="headerMenu">
+          <nav class="navbar">
+                <ul>
+                  <li id="imageElement" style="width:25%"><a href="index.html"> <img src="assets/logo.png" alt="Logo"/></a></li> 
+                  
+                    <li id="searchElement">  
+                    <div id="wrap">
+                        <form action="#" >
+                            <input id="search" name="search" type="search" placeholder="Search me!">
+                            <button type="submit" id="search_submit"></button>
+                        
+                        </form>
+                    </div>
+                    </li>
+                 
+                <li id="notifElement">
+                    <a href="#"><img id="notif" src="assets/notification.png" alt="notification"></a>
+                </li>
+                    
+                <li id="profElement">
+                    <img id="prof" src="assets/Pic.jpg" alt="Profile Picture">
+                </li>              
+             </ul>
+           </nav>
+            
+        </header>
+        <div id="lightbox"></div>
+        <div id="notif_submenu">
+            <div><button type="button">Mark as read</button></div>
+            <div id="notifs">
+                <p>
+                    Notification 1
+                </p>
+                <p>
+                    Notification 2
+                </p>
+                <p>
+                    Notification 3
+                </p>
+            </div>                
+        </div>
+        <div id="prof_submenu" >
+            <div id="items">
+                <p>
+                    <a href="askQ.html">Ask Sensa</a>
+                </p>
+                <p>
+                    <a href="profile.html">Your Profile</a>
+                </p>
+                <p>
+                    <a href="aboutUs.html">About Us</a>
+                </p>
+                <p>
+                    <a href="Settings.html">Settings</a>
+                </p>
+                <p>
+                    <a href="activity_feed.html">Your Activity</a>
+                </p>
+                <p>
+                    <a href="logIn.html">Log out</a>
+                </p>
+            </div>                
+        </div>
+		<div class="main_information">
+		
+		<div id="profile_card">
+		<div class="activity_display_pic">
+					<div class="activity_avatar avatar-a" >
+					</div>
+					<p id="activity_username">Jon Doe</p>
+					</div>
+			 <div id="activity_feed">
+			 <h1 id="activity_title">Activity Feed</h1>
+			 <h3 style="text-align:center;">&lt; -- Questions will be displayed dynamically --&gt;</h3>
+			 </div>
+        </div> 
+        </div>
+        <footer>
+            <div>
+                <p>&copy; 2016 Sensa</p>
+            </div>     
+        </footer>     
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+$("#tab2").click(function(){
+    $(".form").hide();
+    $(".form_interest").show();
+});
+
+
+$("#tab1").click(function(){
+    $(".form").show();
+    $(".form_interest").hide();
+});
+
+$("#edit_button").click(function(){
+        $('input:text').removeAttr("readonly");
+       	$("#email").removeAttr("readonly");
+       	$("#phone").removeAttr("readonly");
+        $("#submit_button").show();
+        $("#edit_button").hide();
+    });
+$("#interest_edit_button").click(function(){
+       
+        $('input:checkbox').removeAttr("disabled");
+        $("#interest_edit_button").hide();
+        $("#interest_submit_button").show();
+    });
+});
+
+
+</script>
+
+
+    </body>
+</html>

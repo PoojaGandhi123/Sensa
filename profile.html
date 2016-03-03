@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" type="text/css"  href="css/main.css"/>
+        <link rel="stylesheet" type="text/css"  href="css/profile.css"/>
+        <script src="jquery-1.12.0.js"></script>
+		<script src="js/main.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
+    </head>
+    
+    
+    <body>
+        <header class="headerMenu">
+          <nav class="navbar">
+                <ul>
+                  <li id="imageElement" style="width:25%"><a href="index.html"> <img src="assets/logo.png" alt="Logo"/></a></li>  
+                  
+                    <li id="searchElement">  
+                    <div id="wrap">
+                        <form action="#" >
+                            <input id="search" name="search" type="search" placeholder="Search me!">
+                            <button type="submit" id="search_submit"></button>
+                        
+                        </form>
+                    </div>
+                    </li>
+                 
+                <li id="notifElement">
+                    <a href="#"><img id="notif" src="assets/notification.png" alt="notification"></a>
+                </li>
+                    
+                <li id="profElement">
+                    <img id="prof" src="assets/Pic.jpg" alt="Profile Picture">
+                </li>              
+             </ul>
+           </nav>
+            
+        </header>
+        <div id="lightbox"></div>
+        <div id="notif_submenu">
+            <div><button type="button">Mark as read</button></div>
+            <div id="notifs">
+                <p>
+                    Notification 1
+                </p>
+                <p>
+                    Notification 2
+                </p>
+                <p>
+                    Notification 3
+                </p>
+            </div>                
+        </div>
+        <div id="prof_submenu" >
+            <div id="items">
+                <p>
+                    <a href="askQ.html">Ask Sensa</a>
+                </p>
+                <p>
+                    <a href="profile.html">Your Profile</a>
+                </p>
+                <p>
+                    <a href="aboutUs.html">About Us</a>
+                </p>
+                <p>
+                    <a href="Settings.html">Settings</a>
+                </p>
+                <p>
+                    <a href="activity_feed.html">Your Activity</a>
+                </p>
+                <p>
+                    <a href="logIn.html">Log out</a>
+                </p>
+            </div>                
+        </div>
+		<div class="main_information">
+		
+		<div id="profile_card">
+		<div id="profile_header">
+		<!-- <div id="about_me" class="child_div" >
+			About Me
+		</div>
+		<div id="interest" class="child_div">
+			 Interests
+		</div> -->
+		 <input class="nav_header" id="tab1" type="radio" name="tabs" checked>
+            <label for="tab1" class="nav_header_label"><span class="tab_name">About Me</span></label>
+    
+ 		 <input class="nav_header" id="tab2" type="radio" name="tabs">
+  			<label for="tab2" class="nav_header_label"><span class="tab_name">Interests</span></label>
+		</div>
+				<div class="display_pic">
+					<div class="avatar avatar-a" >
+					</div>
+				</div>
+			
+				 <div id="about_me">
+   <form class="form" id="form1">
+				<label>First Name</label>
+				<input type="text" name="fname" placeholder="First Name" id="fname" readonly="readonly" />
+				<br/>
+				
+				<label>Last Name</label>
+				
+				<input type="text" name="lname" placeholder="Last Name" id="lname" readonly="readonly"/>
+				
+				<br/>
+				<label>Born</label>
+				
+				<input type="text" name="born" placeholder="Date of Birth" id="born" readonly="readonly"/>
+				
+				
+				<br/>
+
+				<label>Gender</label>
+				
+				<input type="text" name="gender" placeholder="Gender" id="gender" readonly="readonly"/>
+				<br/>
+				
+				<label>Email Id</label>
+				
+				<input type="email" name="email" placeholder="Email" id="email" readonly="readonly"/>
+			
+				<br/>
+
+				<label>Country</label>
+				
+				<input type="text" name="country" placeholder="Country" id="country" readonly="readonly"/>
+				<br/>
+				
+				<label>Phone</label>
+				
+				<input type="tel" name="phone" placeholder="Phone" id="phone" readonly="readonly"/>
+				<br/>
+				<!-- <input type="Button" name="edit" value="EDIT" id="edit_button"/> 
+			 -->
+			 	<input type="Button" name="edit" value="Edit" id="edit_button" class="profile_button" /> 
+			 	<input name="submit" type="submit" value="Submit" id="submit_button" style="display:none" class="profile_button" /> 
+				</form>
+  
+				<form class="form_interest" id="form2">
+								
+			
+				<div class="half_checkbox">
+				<div class="squaredTwo">
+				<input type="checkbox" value="Sports" id="sports" name="sports" disabled="disabled">
+				<label for="sports"></label>
+				</div>
+				Sports
+				<br/>
+				
+				<div class="squaredTwo">
+				<input type="checkbox" value="marketing" id="marketing" name="marketing" disabled="disabled">
+				<label for="marketing"></label>
+				</div>
+				Marketing
+				
+				<br/>
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="psychology" id="psychology" name="psychology" disabled="disabled" >
+				<label for="psychology"></label>
+				</div>
+				Psycology
+				<br/>
+				
+				
+				
+				<div class="squaredTwo">
+				<input type="checkbox" value="education" id="education" name="education" disabled="disabled">
+				<label for="education"></label>
+				</div>
+				Education
+				<br/>
+
+				
+				<div class="squaredTwo">
+				<input type="checkbox" value="travel" id="travel" name="travel" disabled="disabled">
+				<label for="travel"></label>
+				</div>
+				Travel
+				<br/>
+				
+				
+				<div class="squaredTwo">
+				<input type="checkbox" value="writing" id="writing" name="writing" disabled="disabled"/>
+				<label for="writing"></label>
+				</div>
+				Writing
+				<br/>
+				</div>
+
+				<div class="half_checkbox">
+				<div class="squaredTwo">
+				<input type="checkbox" value="history" id="history" name="history" disabled="disabled"/>
+				<label for="history"></label>
+				</div>
+				History
+				<br/>
+
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="design" id="design" name="design" disabled="disabled" />
+				<label for="design"></label>
+				</div>
+				Design
+				<br/>
+
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="cooking" id="cooking" name="cooking" disabled="disabled" />
+				<label for="cooking"></label>
+				</div>
+				Cooking
+				<br/>
+
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="photography" id="photography" name="photography" disabled="disabled"/>
+				<label for="photography"></label>
+				</div>
+				Photography
+				<br/>
+
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="products" id="products" name="products" disabled="disabled" />
+				<label for="products"></label>
+				</div>
+				Products
+				<br/>
+
+
+				<div class="squaredTwo">
+				<input type="checkbox" value="nature" id="nature" name="nature" disabled="disabled"/>
+				<label for="nature"></label>
+				</div>
+				Nature
+				<br/>
+
+				</div>
+
+
+				<input type="Button" name="edit" value="Edit" id="interest_edit_button" class="profile_button" /> 
+			 	<input name="submit" type="submit" value="Submit" id="interest_submit_button" style="display:none" class="profile_button" /> 
+			  <!-- <p id="edit_button">Edit</a></p> -->
+				</form>
+
+
+  </div>
+
+
+<!-- </div> -->			
+			</div>  
+        	
+			
+        </div>    
+        <footer>
+            <div>
+                <p>&copy; 2016 Sensa</p>
+            </div>     
+        </footer>     
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+$("#tab2").click(function(){
+    $(".form").hide();
+    $(".form_interest").show();
+});
+
+
+$("#tab1").click(function(){
+    $(".form").show();
+    $(".form_interest").hide();
+});
+
+$("#edit_button").click(function(){
+        $('input:text').removeAttr("readonly");
+       	$("#email").removeAttr("readonly");
+       	$("#phone").removeAttr("readonly");
+        $("#submit_button").show();
+        $("#edit_button").hide();
+    });
+$("#interest_edit_button").click(function(){
+       
+        $('input:checkbox').removeAttr("disabled");
+        $("#interest_edit_button").hide();
+        $("#interest_submit_button").show();
+    });
+});
+
+
+</script>
+
+
+    </body>
+</html>

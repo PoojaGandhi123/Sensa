@@ -19,6 +19,8 @@ else {
         <link rel="stylesheet" type="text/css"  href="css/main.css"/>
         <script src="jquery-1.12.0.js"></script>
 		<script src="js/main.js"></script>
+        <script src="js/post.js"></script>
+        
         <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
     </head>
     

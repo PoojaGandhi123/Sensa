@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Sensa</title>
+		<link rel="stylesheet" type="text/css" href="css/logIn.css">
+        <script src="jquery-1.12.0.js"></script>
+        <script src="js/main.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="assets/fevicon.ico">
+	</head>
+	<body id="login_body">
+        
+        <img id="logo" src="assets/logo1.png" alt="logo of Sensa.">
+        
+        <p id="tagline"><a id="different1">Different</a> <a id="people">People</a> <a id="have">Have</a> <a id="different2">Different</a> <a id="opinions">Opinions</a></p>
+        
+        <div class="login">
+            <h4>Welcome</h4>
+            <form action="index.html">
+                <input id="username" type="text" >
+                <input id="password" type="password">
+                <p id="forgot"><a>Forgot password?</a></p>
+                <input id="login_button" type="submit">
+            </form>
+            <p id="or">  Or</p>
+            <ul class="social-icons">
+				<li><a href="#" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+				<li><a href="#" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+								</ul><br>
+            <p id="continue"><a >Continue with Email</a></p>
+        
+        </div>
+        <div class="signup">
+            <h4>Sign Up!</h4>
+            <form action="#" method="post">
+                <input type="text" name="fname" style="width:49%" placeholder="First Name" />
+                <input type="text" name="lname" style="width:49%" placeholder="Last Name" />
+                <input type="text" name="eID" placeholder="E-mail ID" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="rep_password" placeholder="Confirm Password" />
+                <input type="date" name="dob" style="width:150px"  /><br>
+                <input type="radio" name="gender" value="Male" id="male">
+                <label for="male">Male</label>&nbsp;&nbsp;&nbsp;
+                <input type="radio" name="gender" value="Female" id="female">
+                <label for="female">Female</label>
+                <input type="submit" name="submit" value="Register">
+                <p id="already_user"><a>Already a user?</a></p>
+            </form>
+        </div>
+        <div id="quotesection" >
+        <p id="quote">"Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth."</p><br>
+        <p id="author">-Marcus Aurelius</p>
+        </div>
+        <footer>
+            <div>
+            <p>&copy; 2016 Sensa</p>
+                </div>
+        </footer>
+		
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#continue").click(function(){
+                    $(".signup").show(); 
+                    $(".login").hide();});
+                $("#already_user").click(function(){
+                    $(".signup").hide(); 
+                    $(".login").show();});
+                
+            });
+        </script>
+	</body>
+</html>
