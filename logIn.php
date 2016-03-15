@@ -1,19 +1,6 @@
 <?php include("./inc/header_login.inc.php");?>
 <?php
-
-
     $submit = @$_POST['submit'];
-    $fname = "";
-    $lname = "";
-    $username = "";
-    $pwd = "";
-    $pwd2 = "";
-    $dos = "";      //date of sign up
-    $email = "";
-    $dob = "";
-    $country = "";
-    $u_exist = "";      //check if username exists.
-
 //Getting Form elements.
     $fname = strip_tags(@$_POST['fname']);
     $lname = strip_tags(@$_POST['lname']);
@@ -21,9 +8,9 @@
     $pwd = strip_tags(@$_POST['password']);
     $pwd2 = strip_tags(@$_POST['rep_password']);    //date of sign up
     $email = strip_tags(@$_POST['eID']);
-    //$dob = strip_tags(@$_POST['dob']);
-    $country = strip_tags(@$_POST['country']);
-
+    $dob = strip_tags(@$_POST['dob']);
+    $gender = strip_tags(@$_POST['gender']);
+    
 
 
 //Post registration
@@ -32,23 +19,43 @@ if ($submit) {
    $query = "SELECT email FROM user WHERE email='$email'"; 
    $re=mysqli_query($con,$query);
     if(mysqli_num_rows($re)==0) {
-        if($fname && $lname && $email && pwd && pwd2) {
+        if($fname && $lname && $email && $pwd && $pwd2 && $gender) {
             if($pwd == $pwd2)   {
                 $pwd = md5($pwd);
-                $query ="INSERT INTO user(email,password,firstName,lastName) VALUES ('$email','$pwd','$fname','$lname')";
+                $query ="INSERT INTO user(email,password,firstName,lastName, birthday, gender) VALUES ('$email','$pwd','$fname','$lname','$dob', '$gender')";
                 mysqli_query($con,$query);
-                die("<h2>Welcome to Sensa</h2>Login to your account to get started ...");
+                
+                $birthdate = new DateTime($dob);
+                $today = new DateTime('today');
+                $age = $birthdate->diff($today)->y;
+                
+                if ($gender == 'Female') {
+                    $profile_pic_name = "assets/Female.png";
+                    $pic_query="UPDATE user SET picURL='$profile_pic_name', age='$age' WHERE email='$email' ";
+                    mysqli_query($con,$pic_query);
+                    
+                }
+                else {
+                    $profile_pic_name = "assets/Male.png";
+                    $pic_query="UPDATE user SET picURL='$profile_pic_name', age='$age' WHERE email='$email' ";
+                    mysqli_query($con,$pic_query);
+                }
+                die("<h2>Welcome to Sensa</h2>Login to your account to get started ...<a href='logIn.php'>Log IN</a><br>");
+                
             }
             else    {
-                echo "Your passwords don't match!";
+                $toShow = 1;
+                $retval = "Your passwords don't match!";
             }
         }
         else {
-            echo "All fields should be filled";
+            $toShow = 1;
+            $retval = "All fields should be filled.";
         }
     }
     else {
-        echo "user already exist";
+        $toShow = 1;
+        $retval = "user already exist";
     }
 }
 
@@ -72,8 +79,8 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
          exit();
    }
     else {
-        echo "The information is incorrect";
-        exit();
+        $toShow = 1;
+        $retval = "The information is incorrect";
     }
 }
 
@@ -82,60 +89,74 @@ if (isset($_POST["user_login"]) && isset($_POST["password_login"])) {
 
 
 	<body id="login_body">
+        <div id="blurr"></div>
+        <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+            <iframe id="video" frameborder="0" height="100%" width="100%" src="https://youtube.com/embed/FtICi4lc27Q?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1&playlist=FtICi4lc27Q&wmode=transparent" allowfullscreen>
+            </iframe>
+        </div>
         
-        <img id="logo" src="assets/logo1.png" alt="logo of Sensa.">
         
-        <p id="tagline"><a id="different1">Different</a> <a id="people">People</a> <a id="have">Have</a> <a id="different2">Different</a> <a id="opinions">Opinions</a></p>
+        
+        
+        
+        
+        
+        <img id="logo" src="assets/logo.png" alt="logo of Sensa.">
+        
+        <p id="tagline"><span id="different1">Different</span> <span id="people">People</span> <span id="have">Have</span> <span id="different2">Different</span> <span id="opinions">Opinions</span></p>
         
         <div class="login">
             <h4>Welcome</h4>
+            <?php if ($toShow == 1) { ?>
+            <div style="color:#F44336; font-family:Roboto; font-size:20px"><?php echo "$retval"; $toShow = 0;?></div><?php } ?>
             <form action="logIn.php" method="post">
-                <input id="username" type="text" name="user_login">
-                <input id="password" type="password" name="password_login">
-                <p id="forgot"><a>Forgot password?</a></p>
-                <input id="login_button" type="submit" name="log">
+                <input class="loginInput" id="username" type="text" name="user_login">
+                <input class="loginInput" id="password" type="password" name="password_login">
+                
+                <input class="loginInput" id="login_button" type="submit" name="log" value="Log In">
             </form>
             <p id="or">  Or</p>
-            <ul class="social-icons">
-				<li><a href="#" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
-				<li><a href="#" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
-								</ul><br>
-            <p id="continue"><a >Continue with Email</a></p>
+           <br>
+            <p id="continue" style="cursor:pointer">Continue with Email</p>
         
         </div>
         <div class="signup">
             <h4>Sign Up!</h4>
+            <div id="passDM">Passwords do not match</div>
             <form action="logIn.php" method="post">
-                <input type="text" name="fname" style="width:49%" placeholder="First Name" />
-                <input type="text" name="lname" style="width:49%" placeholder="Last Name" />
-                <input type="text" name="eID" placeholder="E-mail ID" />
-                <input type="password" name="password" placeholder="Password" />
-                <input type="password" name="rep_password" placeholder="Confirm Password" />
+                <input class="loginInput" type="text" name="fname" style="width:49%" placeholder="First Name" />
+                <input class="loginInput" type="text" name="lname" style="width:49%" placeholder="Last Name" />
+                <input class="loginInput" type="text" name="eID" placeholder="E-mail ID" />
+                <input class="loginInput" type="password" name="password"  placeholder="Password" />
+                <input class="loginInput" type="password" name="rep_password" placeholder="Confirm Password" />
                 <input type="date" name="dob" style="width:150px"  /><br>
-                <input type="radio" name="gender" value="Male" id="male">
+                <input class="loginInput" type="radio" name="gender" value="Male" id="male" checked>
                 <label for="male">Male</label>&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="gender" value="Female" id="female">
+                <input class="loginInput" type="radio" name="gender" value="Female" id="female">
                 <label for="female">Female</label>
-                <input type="submit" name="submit" value="Register">
-                <p id="already_user"><a>Already a user?</a></p>
+                <input class="loginInput" type="submit" name="submit" value="Register">
+                <p id="already_user">Already a user?</p>
             </form>
         </div>
         <div id="quotesection" >
             <p id="quote">"Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth."</p><br>
             <p id="author">-Marcus Aurelius</p>
         </div>
-<?php include("./inc/footer_login.inc.php");?>
-		
-        <script type="text/javascript">
+        
+         <script type="text/javascript">
             $(document).ready(function(){
                 $("#continue").click(function(){
-                    $(".signup").show(); 
-                    $(".login").hide();});
-                $("#already_user").click(function(){
-                    $(".signup").hide(); 
-                    $(".login").show();});
+                    $(".signup").toggle("slow","swing"); 
+                    $(".login").toggle("slow","swing");
+                });
                 
+                $("#already_user").click(function(){
+                    $(".signup").toggle("slow","swing"); 
+                    $(".login").toggle("slow","swing");
+                });
             });
         </script>
-	</body>
-</html>
+<?php include("./inc/footer_login.inc.php");?>
+		
+       
+	

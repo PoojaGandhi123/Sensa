@@ -38,7 +38,19 @@
         $("body").mouseup(function (f) {
             if ($("#lightbox").is(":visible") && !$("#wrap").has(f.target).length) {
                 $("#lightbox").hide();
+                $("input[id='search']").val("");
+                $('.searchResults').hide();
             }
+        });
+    });
+    $(document).ready(function () {
+        $('button[name="cancelAns"]').on('click', function () {
+            $(this).closest('.answerClass').slideToggle();
+        });
+    });
+    $(document).ready(function () {
+        $('.AnsButton').on('click', function () {
+            $(this).next('.answerClass').slideToggle();
         });
     });
 }(jQuery));

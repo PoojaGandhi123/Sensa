@@ -1,5 +1,6 @@
+<?php include("./inc/header_login.inc.php");?>
 <?php
-session_start();
 session_destroy();
-header("Location:logIn.php");
+echo "Your account has been successfully deactivated!";
+echo "<br><a href='logIn.php'>Nah! Log back in</a>";
 ?>

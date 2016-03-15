@@ -1,15 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Lato);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-
+html, body {
+    height: 100%;
+    width: 100%;
+}
 #login_body {
      margin: 0;
     padding: 0;
-    background-image: url(../assets/poly.jpg);
-    background-size: cover;
    
 }
-
+#blurr{
+    position: fixed;
+    z-index: -50;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6)
+}
 #logo {
     height: 105.8px;
     width: 222.7px;
@@ -33,25 +40,30 @@
     
 }
 
-a#different1{
+#different1{
     color: #2b9ffa;
+    font-family: welcome;
     
 }
-a#people{
+#people{
     color: #24bbaa;
+    font-family: welcome;
 }
-a#have{
+#have{
     color: #93c73f;
+    font-family: welcome;
 }
-a#different2{
+#different2{
     color: #f99e29;
+    font-family: welcome;
 }
-a#opinions{
+#opinions{
     color: #ff3155;
+    font-family: welcome;
 }
-
-
-
+#different1:hover, #people:hover, #have:hover, #different2:hover, #opinions:hover {
+    text-decoration: underline;
+}
 #form{
     float: none;
 }
@@ -72,45 +84,52 @@ a#opinions{
     overflow: auto;
     
 }
-
+#login_button {
+    line-height: 35px;
+}
 #forgot{
     font-size: 12px;
     float: right;
+    cursor: pointer;
+    font-family: welcome;
+}
+#forgot:hover {
+    text-decoration: underline;
 }
 #or {
     padding-top: 15px;
     padding-bottom: 15px;
+    font-family: welcome;
 }
 #continue{
     font-style: normal;
+    font-family: welcome;
+}
+#continue:hover {
+    text-decoration: underline;
 }
 #already_user{
     font-style: normal;
+    font-family: welcome;
 }
-
-
+#already_user:hover {
+    text-decoration: underline;
+}
 @font-face{
     font-family: welcome;
     src: url(../assets/High%20Thin%20LIGHT.ttf) 
 }
-h4{
+.login h4, .signup h4{
     color: white;
     font-family: welcome;
     font-size: 40px;
     margin: 0;
     padding: 0;
 }
-a{
-    color: white;
-    font-family: welcome;
-    margin: 0;
-}
-
-
 p{
     margin: 0;
 }
-input {
+.loginInput {
     background-color: #888888;
     color: white;
     width: 100%;
@@ -123,17 +142,21 @@ input {
     box-sizing: border-box;
     border: none;
 }
-input#username {
+#username {
     background-image: url(../assets/user.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-input#password {
+#password {
     background-image: url(../assets/password.png);
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 input:focus {
@@ -187,7 +210,12 @@ input[type=submit]:hover {
  padding-left: 5%;
     float: none;
 }
-
+#passDM {
+    display: none;
+    color: #F44336;
+    font-family: Roboto;
+    font-size: 20px;
+}
 div#quotesection{
     font-family: welcome;
     font-size: 20px;
@@ -195,7 +223,7 @@ div#quotesection{
     height: 10%;
     width: 80%;
     position: fixed;
-    top: 85%;
+    top: 87%;
     left: 10%;
 }
 #quote{
@@ -212,7 +240,6 @@ footer
 	position: absolute;
 	color: #eeeeee;
     bottom: 0;
-/*	background-color: #eeeeee;*/
     text-align: center;
     
 }

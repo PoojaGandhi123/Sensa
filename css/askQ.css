@@ -1,15 +1,25 @@
 #options button {
     background-color: lightgray;
     font: 20px Roboto;
-    width: 49.6%;
+    width: 100%;
     margin: 0;
     border: none;
     height: 50px;
 }
-#options button:focus {
-    background-color: #2B99FA;
+#cards {
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+    min-height: 570px;
+    margin-bottom: 30px;
+    margin-left: 6px;
 }
-
+#options {
+    min-height: 80px;
+    width: 95%;
+    line-height: 80px;
+    color: white;
+    font-size: 22px;
+    padding-left:5%; 
+}
 h3  {
     padding-bottom: 5px;
 }
@@ -35,6 +45,7 @@ h3  {
     width: 150px;
     float: right;
     border: none;
+    color:white;
     background-color: #2B9FFA;
     font-family: Roboto;
     font-size: 18px;
@@ -42,6 +53,8 @@ h3  {
 }
 #question input[type=submit]:hover, #survey input[type=submit]:hover {
     background-color: #2381C8;
+    box-shadow:0 1px 14px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
+    
 }
 #survey {
     display: none;

@@ -89,4 +89,18 @@
             }
         });
     });
+    $(document).ready(function () {
+        $('#editUser form').on('submit', function () {
+            var y = $('#editUser input[type=text]').val();
+            if (y.length > 0) {
+                $.ajax({
+                    url: 'Settings_ajax.php',
+                    data: 'un=' + y,
+                    success: function (recdData) {
+                        $('$dynamic_user').html(recdData);
+                    }
+                });
+            }
+        });
+    });
 }(jQuery));

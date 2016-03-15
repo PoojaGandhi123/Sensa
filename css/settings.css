@@ -3,79 +3,84 @@
 	padding: 0;
 }
 
-.main_content   {
-    min-height: 90%;
-    
-}
-#settings_menu  {
-    width: 90%;;
-    min-height: inherit;
-    background-color: whitesmoke;
-    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0) inset;
-    float: left;
-    margin: 5px;
+#top {
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.8em;
     padding: 15px;
+    box-shadow:0 2px 10px #ccc;
+    margin: 0;
 }
 
-#settings_menu h3   {
-    padding-bottom: 5px;
-}
-
-#settings_menu ul  {
+#general_child{
     list-style-type: none;
     vertical-align: middle;
+    width: 100%;
 }
-#settings_menu ul li    {
+#account_child{
+    list-style-type: none;
+    vertical-align: middle;
+    width: 100%;
+}
+#general{
     display: block;
-    margin-left: 10px;
-    line-height: 40px;
-    font-size: 16px;    
-    padding: 5px;
+    opacity: 0.5;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-#settings_menu ul li a  {
-    line-height: 35px;
-    color: inherit;
-    font-size: 16px;
-    text-decoration: underline;
+#account{
+    display: block;
+    opacity: 0.5;
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-#settings_menu ul li a:hover  {
-    color: darkslateblue;
-} 
 
-#general_tab, #general_content   {
+#general_tab {
     display: inline-block;
+    width: 95%;
+    padding-left: 25px;
+    list-style: none;
 }
-#general_content    {
-    width: 50%;
+
+#account_tab {
+    display: inline-block;
+    width: 95%;
+    padding-left: 25px;
+    list-style: none;
 }
+
+
+
 #editMail, #editUser, #editPassword   {
     display: none;
     vertical-align: middle;
 }
-input   {
-    height: 30px;
-}
-input[placeholder]   {
-    line-height: 18px;
-}
 #themeContent span  {
     display: inline-block;
-    vertical-align: text-top;
+    vertical-align: middle;
 }
-#general_tab    {
-    width: 90%;
-}
+
 .tab    {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
+    line-height: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px #bbb solid;
 }
 .tabhead    {
-    min-width: 150px;
+    min-width: 200px;
+    font-size: 1em;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: middle; 
+}
+#c_ff3155, #c_f99e29, #c_93c73f, #c_24bba, #c_2b9ffa {
+    border: none;
 }
 #c_ff3155    {
     display: inline-block;

@@ -1,6 +1,5 @@
 <?php
-
-$con=mysqli_connect("localhost","root","mysql") or die("couldnt connect");
- mysqli_select_db($con,"opinion") or die("coudnt find db");
+$con=mysqli_connect("localhost","root","") or die("couldnt connect");       //change according to your database.
+ mysqli_select_db($con,"webdb") or die("coudnt find db");
 
 ?>
